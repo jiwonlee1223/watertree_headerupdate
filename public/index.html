@@ -1,47 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>watertree</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-  <header class="header">
-    <div class="logo">
-      <img onclick="scrollToTop()" src="/src/watertreeLogo.png" alt="Logo">
-    </div>    
-    <nav class="nav-buttons">
-      <button onclick="scrollToImage('image2')">Idea</button>
-      <button onclick="scrollToImage('image3')">Form</button>
-      <button onclick="scrollToImage('image4')">Function</button>
-      <button onclick="scrollToImage('image7')">Differentiation</button>
-      <button onclick="scrollToImage('image8')">Sustainability</button>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>watertree</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img onclick="scrollToTop()" src="/src/watertreeLogo.png" alt="Logo" />
+      </div>
+      <nav class="nav-buttons">
+        <button onclick="scrollToImage('image2')">Idea</button>
+        <button onclick="scrollToImage('image3')">Form</button>
+        <button onclick="scrollToImage('image4')">Function</button>
+        <button onclick="scrollToImage('image7')">Differentiation</button>
+        <button onclick="scrollToImage('image8')">Sustainability</button>
+      </nav>
+    </header>
 
-  <div class="bg-video-wrap">
-    <div class="bg-pattern"></div>
-    <video id="bgVideo1" class="bg-video" width="100%" height="100%" autoplay muted loop preload="auto" playsinline>
-      <source src="/video/header-bgvideo.mp4" type="video/mp4">
-    </video>
-    <div class="overlay-content">
-      <h1 class="overlay-text">Watertree</h1>
-      <h2 class="overlay-text-sub">How can we obtain clean water safely and efficiently in extreme environments? </h2>
-      <button class="video-link-button" onclick="openNewWindow('https://youtu.be/TM_bIXx731c')">Go to Video</button>
+    <div class="bg-video-wrap">
+      <div class="bg-pattern"></div>
+      <video
+        id="bgVideo1"
+        class="bg-video"
+        width="100%"
+        height="100%"
+        autoplay
+        muted
+        loop
+        preload="auto"
+        playsinline
+      >
+        <source src="/video/header-bgvideo.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay-content">
+        <h1 class="overlay-text">Watertree</h1>
+        <h2 class="overlay-text-sub">
+          How can we obtain clean water safely and efficiently in extreme
+          environments?
+        </h2>
+        <button
+          class="video-link-button"
+          onclick="openNewWindow('https://youtu.be/TM_bIXx731c')"
+        >
+          Go to Video
+        </button>
+      </div>
     </div>
-  </div>  
 
-  <!-- 이미지 섹션 -->
-  <section id="image1"><img src="/src/01.jpg" alt="Main"></section>
-  <section id="image2"><img src="/src/02.jpg" alt="Idea"></section>
-  <section id="image3"><img src="/src/03.jpg" alt="Form"></section>
-  <section id="image4"><img src="/src/04.jpg" alt="Function | Structure"></section>
-  <section id="image5"><img src="/src/05.jpg" alt="Function | How to Use"></section>
-  <section id="image6"><img src="/src/06.jpg" alt="Function | How It Works"></section>
-  <section id="image7"><img src="/src/07.jpg" alt="Differentiation"></section>
-  <section id="image8"><img src="/src/08.jpg" alt="Sustainability & Social Benefit"></section>
+    <section class="image-section" id="image1">
+      <div class="image-wrap">
+        <img id="main-image" src="/src/01.jpg" alt="Main Image" />
+      </div>
+      <div class="text-container" id="text-container-1">
+        <img id="watertree-text-logo" src="/src/watertree-text-logo.png" alt="logo">
+        <div class="text-wrap" id="descr-1">
+          <p>How can we obtain clean water safely and efficiently in extreme environments?</p>
+        </div>
+        <div class="text-wrap" id="descr-2">
+          <p>
+            WATERTREE is a conceptual product inspired by tree's water acquisition and transpiration principles. 
+            It features root robots with microporous filters at their tips, an artificial stem generating negative 
+            pressure to draw water up, and leaves that vaporize water, while a condenser stores it in a tank. 
+            Developed in collaboration with engineers, this functional prototype aims to serve disaster zones, 
+            deserts, and underdeveloped regions, addressing urgent water needs. Ultimately, WATERTREE has potential as a vital 
+            device for sustainable water production on Mars.
+          </p>
+        </div>
+      </div>
+    </section>    
+    
+    <section class="image-section" id="image2">
+      <div class="image-wrap">
+        <img id="image2-1" src="/src/02-1.jpg" alt="Original Image" />
+        <img id="image2-2" src="/src/02-2.jpg" alt="Changed Image" />
+      </div>
+    </section>    
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="script.js"></script>
-</body>
+    <section class="image-section" id="image3">
+      <div class="image-wrap">
+        <img src="/src/03.jpg" alt="Form" />
+      </div>
+      <div class="text-wrap">
+        <p>This is the text for image 3.</p>
+        <p>Details about the form...</p>
+      </div>
+    </section>
+    <section class="image-section" id="image4">
+      <div class="image-wrap">
+        <img src="/src/04.jpg" alt="Form" />
+      </div>
+      <div class="text-wrap">
+        <p>This is the text for image 4.</p>
+        <p>Details about the form...</p>
+      </div>
+    </section>
+    <section class="image-section" id="image5">
+      <div class="image-wrap">
+        <img src="/src/05.jpg" alt="Form" />
+      </div>
+      <div class="text-wrap">
+        <p>This is the text for image 5.</p>
+        <p>Details about the form...</p>
+      </div>
+    </section>
+    <section class="image-section" id="image6">
+      <div class="image-wrap">
+        <img src="/src/06.jpg" alt="Form" />
+      </div>
+      <div class="text-wrap">
+        <p>This is the text for image 6.</p>
+        <p>Details about the form...</p>
+      </div>
+    </section>
+    <section class="image-section" id="image7">
+      <div class="image-wrap">
+        <img src="/src/07.jpg" alt="Form" />
+      </div>
+      <div class="text-wrap">
+        <p>This is the text for image 7.</p>
+        <p>Details about the form...</p>
+      </div>
+    </section>
+    <section class="image-section" id="image8">
+      <div class="image-wrap">
+        <img src="/src/08.jpg" alt="Form" />
+      </div>
+      <div class="text-wrap">
+        <p>This is the text for image 8.</p>
+        <p>Details about the form...</p>
+      </div>
+    </section>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

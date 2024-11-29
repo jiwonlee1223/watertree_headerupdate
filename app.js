@@ -23,7 +23,7 @@ function handleSocketConnection(socket) {
 
 io.on("connection", handleSocketConnection);
 
-const PORT = 80;
+const PORT = 3002;
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -31,6 +31,64 @@ function scrollToTop() {
   });
 }
 
-function openNewWindow(url) {
-    window.open(url, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
-  }  
+// 스크롤 이벤트 리스너
+document.addEventListener("scroll", () => {
+  handleMainImageScale();
+  handleImage2Fade("#image2");
+});
+
+// 클릭 이벤트 추가
+document.querySelectorAll("#image2 img").forEach((image) => {
+  image.addEventListener("click", () => handleImage2Click("#image2"));
+});
+
+// 메인 이미지 확대 처리
+function handleMainImageScale() {
+  const image = document.getElementById("main-image");
+  const imageRect = image.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // 이미지가 뷰포트에 보이는 비율 계산
+  const visibleRatio = Math.max(
+    0,
+    Math.min(1, (windowHeight - imageRect.top) / windowHeight)
+  );
+
+  // 확대 비율 계산 (1 ~ 1.5배 확대)
+  const scale = 1 + visibleRatio * 0.5;
+
+  // 이미지 확대 적용
+  image.style.transform = `scale(${scale})`;
+}
+
+// 특정 섹션의 이미지 전환 처리 (스크롤)
+function handleImage2Fade(sectionId) {
+  const section = document.querySelector(sectionId);
+  const images = section.querySelectorAll("img");
+  const sectionRect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // 섹션이 화면 중앙에 가까울 때 효과 적용
+  if (sectionRect.top < windowHeight / 2 && sectionRect.bottom > windowHeight / 2) {
+    images[0].classList.remove("active");
+    images[1].classList.add("active");
+  } else {
+    images[1].classList.remove("active");
+    images[0].classList.add("active");
+  }
+}
+
+// 특정 섹션의 이미지 전환 처리 (클릭)
+function handleImage2Click(sectionId) {
+  const section = document.querySelector(sectionId);
+  const images = section.querySelectorAll("img");
+
+  // 현재 활성화된 이미지를 확인
+  if (images[0].classList.contains("active")) {
+    images[0].classList.remove("active");
+    images[1].classList.add("active");
+  } else {
+    images[1].classList.remove("active");
+    images[0].classList.add("active");
+  }
+}
