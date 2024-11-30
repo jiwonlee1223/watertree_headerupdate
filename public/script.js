@@ -35,7 +35,9 @@ function scrollToTop() {
 document.addEventListener("scroll", () => {
   handleMainImageScale();
   handleImage2Fade("#image2");
+  handleImage3Parallax(); 
 });
+
 
 // 클릭 이벤트 추가
 document.querySelectorAll("#image2 img").forEach((image) => {
@@ -92,3 +94,37 @@ function handleImage2Click(sectionId) {
     images[0].classList.add("active");
   }
 }
+
+function handleImage3Parallax() {
+  const section = document.getElementById("image3");
+  const image2 = document.getElementById("image3-2");
+  const image3 = document.getElementById("image3-3");
+
+  const sectionRect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // 섹션이 화면에 보일 때만 동작
+  if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+    const scrollProgress = Math.max(
+      0,
+      Math.min(1, 1 - sectionRect.top / windowHeight)
+    );
+
+    // image2: 우측 상단에서 내려오는 효과
+    const image2Start = -200; // 초기 위치 (px)
+    const image2End = 30; // 최종 위치 (px)
+    const image2Y = image2Start + (image2End - image2Start) * scrollProgress;
+    image2.style.transform = `translateY(${image2Y}px)`;
+
+    // image3: 오른쪽에서 반쯤 나타나는 효과
+    const image3Start = -100; // 초기 위치 (px)
+    const image3End = 0; // 최종 위치 (px)
+    const image3X = image3Start + (image3End - image3Start) * scrollProgress;
+    image3.style.transform = `translateX(${image3X}px)`;
+  }
+}
+
+// 스크롤 이벤트 리스너 추가
+document.addEventListener("scroll", () => {
+  handleImage3Parallax();
+});
