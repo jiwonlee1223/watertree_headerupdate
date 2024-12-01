@@ -7,8 +7,8 @@
   </head>
   <body>
     <header class="header">
-      <div class="logo">
-        <img onclick="scrollToTop()" src="/src/watertreeLogo.png" alt="Logo" />
+      <div class="main-logo">
+        <img onclick="scrollToTop()" src="/src/watertree-text-logo.png" alt="Logo" />
       </div>
       <nav class="nav-buttons">
         <button onclick="scrollToImage('image2')">Idea</button>
@@ -35,17 +35,17 @@
         <source src="/video/header-bgvideo.mp4" type="video/mp4" />
       </video>
       <div class="overlay-content">
-        <h1 class="overlay-text">Watertree</h1>
+        <!-- <h1 class="overlay-text">Watertree</h1> -->
         <h2 class="overlay-text-sub">
-          How can we obtain clean water safely and efficiently in extreme
-          environments?
+          How can we obtain clean water safely and efficiently </br>
+          in extreme environments?
         </h2>
         <button
-          class="video-link-button"
-          onclick="openNewWindow('https://youtu.be/TM_bIXx731c')"
-        >
-          Go to Video
-        </button>
+  class="video-link-button"
+  onclick="window.open('https://youtu.be/3Ykk5BqC5PY', '_blank')"
+>
+  Go to Video
+</button>
       </div>
     </div>
 
@@ -56,11 +56,12 @@
       <div class="text-container" id="text-container-1">
         <img id="watertree-text-logo" src="/src/watertree-text-logo.png" alt="logo">
         <div class="text-wrap" id="descr-1">
-          <p>How can we obtain clean water safely and efficiently in extreme environments?</p>
+          <p style="font-weight: lighter;">How can we obtain clean water safely and efficiently in extreme environments?</p>
         </div>
         <div class="text-wrap" id="descr-2">
-          <p>
-            WATERTREE is a conceptual product inspired by tree's water acquisition and transpiration principles. 
+          <p style="font-weight: bold; display: inline;">WATERTREE</p>
+          <p style="font-weight: lighter; display: inline;">
+            is a conceptual product inspired by tree's water acquisition and transpiration principles. 
             It features root robots with microporous filters at their tips, an artificial stem generating negative 
             pressure to draw water up, and leaves that vaporize water, while a condenser stores it in a tank. 
             Developed in collaboration with engineers, this functional prototype aims to serve disaster zones, 

@@ -5,9 +5,8 @@
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif, sans-serif;
     background-color: #1e1e1e;
-    padding-top: 95px; /* 헤더 높이만큼 여백 추가 */
   }
   
   
@@ -19,33 +18,34 @@
   
   .header {
     position: fixed; /* 고정 위치 설정 */
-    top: 0;
-    left: 0;
-    right: 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 20px;
-    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.95), rgba(44, 44, 44, 0.8)); /* 투명 그라데이션 */
+    top: 0; /* 헤더를 화면 상단에 고정 */
+    left: 0; /* 헤더를 화면 좌측에 고정 */
+    right: 0; /* 헤더를 화면 좌측에 고정 */
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center;    /* 가로 가운데 정렬 */
+    justify-content: center; /* 세로 가운데 정렬 */
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.95), rgba(44, 44, 44,0));
     color: #FFFFFF;
     z-index: 1000; /* 다른 콘텐츠 위에 표시 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
   }
   
-  .logo img {
+  .main-logo img {
     width: 100%; /* 너비를 부모 요소에 맞춤 */
+    bottom: 20px;
     height: auto; /* 높이를 자동으로 조절하여 비율 유지 */
-    max-width: 200px; /* 원하는 최대 너비 */
+    max-width: 150px; /* 원하는 최대 너비 */
     object-fit: contain; /* 이미지를 잘라내지 않고 전체 표시 */
   }
   
   .nav-buttons {
     display: flex;
-    gap: 10px; /* 버튼 사이 간격 */
+    gap: 40px; /* 버튼 사이 간격 */
   }
   
   .nav-buttons button {
-    padding: 8px 16px;
+    padding: 25px 0px;
     font-size: 16px;
     color: #FFFFFF;
     background: none;
@@ -101,14 +101,14 @@
     margin-bottom: 20px;
   }
 
-  overlay-text-sub {
-    font-size: 1rem;
-    margin-bottom: 20px;
+  .overlay-text-sub {
+    font-size: 20px;
+    line-height: 1.7; /* 글자 크기의 1.5배로 줄 간격 설정 */
   }
   
   .video-link-button {
     padding: 10px 20px ;
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 1.2rem;
     background-color: transparent; /* Fill 제거 */
     color: #fff; /* 글씨 흰색 */
@@ -125,20 +125,22 @@
 
   #text-container-1 {
     position: absolute;
-    bottom: 20px; /* 이미지 아래쪽에서의 간격 */
-    left: 20px;   /* 이미지 왼쪽에서의 간격 */
+    bottom: 40px; /* 이미지 아래쪽에서의 간격 */
+    left: 90px;   /* 이미지 왼쪽에서의 간격 */
     color: white; /* 텍스트 색상을 흰색으로 설정 */
-    max-width: 40%; /* 필요에 따라 조정 가능 */
+    max-width: 50%; /* 필요에 따라 조정 가능 */
   }
   
   #text-container-1 .text-wrap {
-    margin-bottom: 10px; /* 텍스트 간격 */
+    margin-top: 10px;
+    margin-bottom: 15px; /* 텍스트 간격 */
   }
-  
-  #text-container-1 .watertree-text-logo-white {
-    display: block;
-    max-width: 100px; /* 로고 크기 조정 */
-    margin-bottom: 10px; /* 로고 아래 여백 */
+
+  #watertree-text-logo {
+    width: 200px; /* 원하는 너비로 설정 */
+    height: auto; /* 비율을 유지하면서 높이를 자동으로 조정 */
+    display: block; /* 이미지를 블록으로 설정 */
+    margin-bottom: 20px; /* 로고 아래 여백 */
   }
   
   #image1 {
@@ -166,13 +168,6 @@
     transform-origin: center; /* 확대 중심 설정 */
     width: auto; /* 이미지 너비 자동 조정 */
     height: 100%; /* 이미지 높이 섹션에 맞게 조정 */
-  }
-  
-  #watertree-text-logo {
-    width: 200px; /* 원하는 너비로 설정 */
-    height: auto; /* 비율을 유지하면서 높이를 자동으로 조정 */
-    display: block; /* 이미지를 블록으로 설정 */
-    margin-bottom: 10px; /* 로고 아래 여백 */
   }
 
   #image2 {
