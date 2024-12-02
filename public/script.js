@@ -37,6 +37,8 @@ document.addEventListener("scroll", () => {
   handleImage2Fade("#image2");
   handleImage3Parallax(); 
   handleImage4Material();
+  handleImage5HorizontalScroll();
+  handleImage5Fade("#image5");
 });
 
 
@@ -144,3 +146,45 @@ function handleImage4Material() {
     materialImage.style.transform = `scale(${scale})`;
   }
 }
+
+// 특정 섹션의 이미지 전환 처리 (스크롤)
+function handleImage5Fade(sectionId) {
+  const section = document.querySelector(sectionId);
+  const images = section.querySelectorAll("img");
+  const sectionRect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // 섹션이 화면 중앙에 가까울 때 효과 적용
+  if (sectionRect.top < windowHeight / 2 && sectionRect.bottom > windowHeight / 2) {
+    images[0].classList.remove("active");
+    images[1].classList.add("active");
+  } else {
+    images[1].classList.remove("active");
+    images[0].classList.add("active");
+  }
+}
+
+// 특정 섹션의 이미지 전환 처리 (클릭)
+function handleImage5Click(sectionId) {
+  const section = document.querySelector(sectionId);
+  const images = section.querySelectorAll("img");
+
+  // 현재 활성화된 이미지를 확인
+  if (images[0].classList.contains("active")) {
+    images[0].classList.remove("active");
+    images[1].classList.add("active");
+  } else {
+    images[1].classList.remove("active");
+    images[0].classList.add("active");
+  }
+}
+
+// 클릭 이벤트 추가
+document.querySelector("#image5").addEventListener("click", () => {
+  handleImage5Click("#image5");
+});
+
+// 스크롤 이벤트 추가
+document.addEventListener("scroll", () => {
+  handleImage5Fade("#image5");
+});
