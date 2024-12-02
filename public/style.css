@@ -257,7 +257,7 @@
   #image4 img[alt="material"] {
     position: absolute;
     margin-top: 800px;
-    transform: translate(-50%, -50%) scale(0.8); /* 가운데 정렬 */
+    transform: translate(-50%, -50%) scale(0.5); /* 가운데 정렬 */
     z-index: 2; /* 전경 이미지 */
     transition: transform 0.1s ease-out;
   }

@@ -142,7 +142,7 @@ function handleImage4Material() {
     );
 
     // 확대 비율 계산 (1 ~ 2배 확대)
-    const scale = 1 + scrollProgress;
+    const scale = 1 + scrollProgress * 0.5; // 최대 1.5배
     materialImage.style.transform = `scale(${scale})`;
   }
 }
