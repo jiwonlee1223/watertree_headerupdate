@@ -6,7 +6,7 @@
   
   body {
     font-family: Helvetica, sans-serif, sans-serif;
-    background-color: #1e1e1e;
+    background-color: #ffffff;
   }
   
   
@@ -231,5 +231,34 @@
     width: 50%;
     z-index: 5;
     transition: transform 0.3s ease-out; /* 부드러운 이동 효과 */
+  }
+  
+  #image4 {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 화면 전체 높이 */
+    overflow: hidden; /* 콘텐츠가 넘치지 않도록 설정 */
+  }
+  
+  #image4 .image-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #image4 img[alt="Form"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 섹션을 꽉 채우도록 설정 */
+    z-index: 1; /* 배경 이미지 */
+  }
+  
+  #image4 img[alt="material"] {
+    position: absolute;
+    margin-top: 800px;
+    transform: translate(-50%, -50%) scale(0.8); /* 가운데 정렬 */
+    z-index: 2; /* 전경 이미지 */
+    transition: transform 0.1s ease-out;
   }
   

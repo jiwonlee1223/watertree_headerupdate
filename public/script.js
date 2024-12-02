@@ -36,6 +36,7 @@ document.addEventListener("scroll", () => {
   handleMainImageScale();
   handleImage2Fade("#image2");
   handleImage3Parallax(); 
+  handleImage4Material();
 });
 
 
@@ -124,7 +125,22 @@ function handleImage3Parallax() {
   }
 }
 
-// 스크롤 이벤트 리스너 추가
-document.addEventListener("scroll", () => {
-  handleImage3Parallax();
-});
+// 스크롤에 따라 이미지 확대 처리
+function handleImage4Material() {
+  const section = document.getElementById("image4");
+  const materialImage = section.querySelector("img[alt='material']");
+  const sectionRect = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  // 섹션이 화면에 보일 때만 동작
+  if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+    const scrollProgress = Math.max(
+      0,
+      Math.min(1, (windowHeight - sectionRect.top) / (windowHeight + sectionRect.height))
+    );
+
+    // 확대 비율 계산 (1 ~ 2배 확대)
+    const scale = 1 + scrollProgress;
+    materialImage.style.transform = `scale(${scale})`;
+  }
+}
